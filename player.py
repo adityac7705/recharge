@@ -18,3 +18,11 @@ class Player:
             self.overcharged = True
         else:
             self.charges += 1
+
+    def spend_charges(self, amount):
+        if amount <= 0:
+            return False
+        if self.charges >= amount:
+            self.charges -= amount
+            return True
+        return False
